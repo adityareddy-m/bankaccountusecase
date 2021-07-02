@@ -62,5 +62,22 @@ public class CustomerRgistrationService {
 		return accountNumber;
 		
 	}
+
+	public String transactionMoney(String fromAccountNumber, String toAccountNumner, String amount) {
+		log.debug("Trasaction in progress....");
+		 
+		String message="";
+		
+		CustomerInfo customer = customerRepos.findByaccountnumber(fromAccountNumber);
+		
+		if(customer.getAccountNumber()!=null) {
+			 message = "Transaction Completed Successfully"; 
+		}
+		else {
+			message = "Transaction Failed";
+		}
+		
+		return message;
+	}
 	
 }
