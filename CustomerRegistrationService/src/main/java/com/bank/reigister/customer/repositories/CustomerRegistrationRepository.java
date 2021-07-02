@@ -11,5 +11,6 @@ public interface CustomerRegistrationRepository extends JpaRepository<CustomerIn
 		
 	CustomerInfo findByfirstname(String name);
 	CustomerInfo findByusername(String username);
+	CustomerInfo findByaccountnumber(String fromAccountNumber);
 	
 }
